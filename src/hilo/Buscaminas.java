@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -17,7 +18,7 @@ import javax.swing.JFrame;
 public class Buscaminas extends JFrame {
     public Buscaminas(){
         JButton tablero[][]=new JButton[10][10];
-        this.setSize(500, 500);
+        this.setSize(500, 600);
         this.setLocationRelativeTo(null);
         this.setLayout(null); //Acomodamiento
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -35,6 +36,12 @@ public class Buscaminas extends JFrame {
                 });
             }
         }
+        
+        JLabel etiqueta = new JLabel();
+        Cronometro2 obj = new Cronometro2(etiqueta);
+        obj.start();
+        etiqueta.setBounds(100, 480, 200,100);
+        this.add(etiqueta);
         
         this.setVisible(true);
     }

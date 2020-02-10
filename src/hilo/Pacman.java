@@ -30,13 +30,16 @@ public class Pacman extends JFrame implements KeyListener {
         this.addKeyListener(this);
         Graphics g = this.getGraphics();
         int contador = 0;
-        pelotaX =(int) Math.round(Math.random()*400);
-        pelotaY =(int) Math.round(Math.random()*400);
+        pelotaX =(int) Math.round(Math.random()*330+30);
+        pelotaY =(int) Math.round(Math.random()*330+50);
+        Cronometro obj = new Cronometro();
+        obj.start();
         while (true) {
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, 400, 400);
             g.setColor(Color.WHITE);
             g.drawString("Contador : " + marcador, 10, 50);
+            g.drawString("Tiempo: " + obj.tiempo, 100, 50);
             g.setColor(Color.YELLOW);
             g.fillOval(x, y, 30, 30);
             g.fillOval(pelotaX, pelotaY, 10,10);
